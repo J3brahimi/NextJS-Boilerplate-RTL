@@ -1,3 +1,6 @@
 @import "bootstrap/scss/bootstrap-grid";
 
-@import "./general.scss";
+@import "./fonts.scss";
+@import "./_generals.scss";
+@import "./reset.scss";
+@import "./rtl.scss";

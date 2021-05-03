@@ -1,7 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
-import Contact from "./Contact";
 
 const useStyles = makeStyles(theme => ({
   main_root: {
@@ -18,7 +17,6 @@ export default function Layout({ children }) {
     <div className={classes.main_root}>
       <Navigation />
       {children}
-      <Contact />
       <Footer />
     </div>
   );

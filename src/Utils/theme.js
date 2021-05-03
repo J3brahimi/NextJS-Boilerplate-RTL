@@ -16,6 +16,7 @@ const red = "#FF0046";
 const yellow = "#FFBE0B";
 
 const theme = createMuiTheme({
+  direction: "rtl",
   palette: {
     primary: {
       main: navyBlue,

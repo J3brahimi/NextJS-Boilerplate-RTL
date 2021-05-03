@@ -1,8 +1,17 @@
 import { useEffect } from "react";
 import Head from "next/head";
 
+// jss
+import { create } from "jss";
+import rtl from "jss-rtl";
+
 // MUI & StyledComponent Core
-import { ThemeProvider as MaterialThemeProvider } from "@material-ui/core/styles";
+import {
+  ThemeProvider as MaterialThemeProvider,
+  StylesProvider,
+  jssPreset,
+  createGenerateClassName,
+} from "@material-ui/core/styles";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import theme from "Utils/theme";
 
@@ -16,6 +25,12 @@ import { UserProvider } from "Context/User";
 
 // Layout
 import Layout from "Components/Layout";
+
+// Configure JSS
+const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+
+// Custom Material-UI class name generator.
+const generateClassName = createGenerateClassName();
 
 function MyApp({ Component, pageProps }) {
   // useEffect config material-ui
@@ -33,15 +48,17 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <StyledThemeProvider theme={theme}>
-        <MaterialThemeProvider theme={theme}>
-          <CssBaseline />
-          <Normalize />
-          <UserProvider>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </UserProvider>
-        </MaterialThemeProvider>
+        <StylesProvider jss={jss} generateClassName={generateClassName}>
+          <MaterialThemeProvider theme={theme}>
+            <CssBaseline />
+            <Normalize />
+            <UserProvider>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </UserProvider>
+          </MaterialThemeProvider>
+        </StylesProvider>
       </StyledThemeProvider>
     </>
   );

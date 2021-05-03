@@ -11,7 +11,7 @@ import theme from "Utils/theme";
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html dir="rtl">
         <Head>
           <meta charSet="UTF-8" />
           {/* PWA primary color */}
@@ -31,27 +31,8 @@ class MyDocument extends Document {
             worker-src 'self' blob:;"
           />
           {/*  cdn */}
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            rel="preload"
-            as="style"
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-          />
-          <link
-            rel="preload"
-            as="style"
-            href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          />
         </Head>
-        <body>
+        <body dir="rtl">
           <Main />
           <NextScript />
         </body>

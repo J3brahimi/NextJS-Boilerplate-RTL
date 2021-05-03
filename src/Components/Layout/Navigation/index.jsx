@@ -89,7 +89,7 @@ const Navigation = () => {
               <Grid item>
                 <NavigationMenuList />
               </Grid>
-              <Grid item style={{ marginLeft: "auto" }}>
+              <Grid item style={{ marginRight: "auto" }}>
                 <NavigationAuthBtn />
               </Grid>
             </Grid>
