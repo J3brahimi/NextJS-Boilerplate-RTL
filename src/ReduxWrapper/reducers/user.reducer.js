@@ -4,6 +4,8 @@ import { LOGIN, LOGOUT } from "../types/user.types";
 const initialState = {
   isLoggedIn: false,
   profile: null,
+  isHere: false,
+  testValue: "javad",
 };
 
 export default (state = initialState, action) => {

@@ -1,10 +1,11 @@
-import { createStore, applyMiddleware } from "redux";
 import { createWrapper } from "next-redux-wrapper";
 import thunkMiddleware from "redux-thunk";
 import { PersistGate } from "redux-persist/integration/react";
 import { useStore } from "react-redux";
 
 import rootReducer from "./rootReducer";
+
+import { createStore, applyMiddleware } from "redux";
 
 const bindMiddleware = middleware => {
   if (process.env.NODE_ENV !== "production") {

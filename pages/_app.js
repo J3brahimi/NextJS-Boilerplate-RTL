@@ -23,6 +23,9 @@ import "Assets/styles/index.scss";
 // Context
 import { UserProvider } from "Context/User";
 
+// Redux
+import { ReduxWrapper } from "ReduxWrapper";
+
 // Layout
 import Layout from "Components/Layout";
 
@@ -46,20 +49,21 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-
-      <StyledThemeProvider theme={theme}>
-        <StylesProvider jss={jss} generateClassName={generateClassName}>
-          <MaterialThemeProvider theme={theme}>
-            <CssBaseline />
-            <Normalize />
-            <UserProvider>
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
-            </UserProvider>
-          </MaterialThemeProvider>
-        </StylesProvider>
-      </StyledThemeProvider>
+      <ReduxWrapper>
+        <StyledThemeProvider theme={theme}>
+          <StylesProvider jss={jss} generateClassName={generateClassName}>
+            <MaterialThemeProvider theme={theme}>
+              <CssBaseline />
+              <Normalize />
+              <UserProvider>
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
+              </UserProvider>
+            </MaterialThemeProvider>
+          </StylesProvider>
+        </StyledThemeProvider>
+      </ReduxWrapper>
     </>
   );
 }
