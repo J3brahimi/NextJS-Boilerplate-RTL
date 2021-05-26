@@ -15,10 +15,13 @@ import {
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import theme from "Utils/theme";
 
-// styles
+// STYLES
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { Normalize } from "styled-normalize";
 import "Assets/styles/index.scss";
+
+// carousel styles
+import "Assets/libs/react-alice-carousel/react-alice-carousel.css";
 
 // Context
 import { UserProvider } from "Context/User";

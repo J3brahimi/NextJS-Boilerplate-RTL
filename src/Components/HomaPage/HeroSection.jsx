@@ -2,6 +2,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import InnerContainer from "Components/Layout/InnerContainer";
 import { useSelector } from "react-redux";
 
+// import carousel
+import { PrimaryCarousel } from "Components/Carousel";
+
 const useStyles = makeStyles(theme => ({
   root: {
     "& h1": {
@@ -22,7 +25,8 @@ export default function HeroSection() {
     <header className={classes.root}>
       <InnerContainer>
         <div>
-          <h1>تست فونت</h1>
+          <h1>Firebase Carousel</h1>
+          <PrimaryCarousel />
           {/* <h4>{test}</h4> */}
         </div>
       </InnerContainer>
